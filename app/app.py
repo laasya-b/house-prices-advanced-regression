@@ -4,8 +4,10 @@ import numpy as np
 import joblib
 import plotly.express as px
 
-model = joblib.load('../models/model.pkl')
-feature_names = joblib.load('../models/feature_names.pkl')
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+model = joblib.load(os.path.join(BASE_DIR, 'models', 'model.pkl'))
+feature_names = joblib.load(os.path.join(BASE_DIR, 'models', 'feature_names.pkl'))
 
 #  Page Config
 st.set_page_config(
